@@ -32,13 +32,11 @@ if st.button("Predict Cluster"):
     st.write(f"### Segment: **{cluster}**")
 
     cluster_info = {
-        0: "🟦 Cluster 0: Low Spending Customers",
-        1: "🟩 Cluster 1: Medium Spending Customers",
-        2: "🟧 Cluster 2: High Spending Customers"
+        0: "🟦 Cluster 0: Low/Medium  Spending Customers",
+        1: "🟩 Cluster 1: High Spending Customers"
     }
 
     if cluster in cluster_info:
-        st.success(cluster_info[cluster])
-else:
-    st.warning("Cluster information not defined.")
+        st.success(cluster_info.get(cluster,"Unknown Cluster"))
+
 
